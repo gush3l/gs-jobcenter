@@ -1,19 +1,95 @@
-const jsonList = {
-    "jobSlide_0": "#30D252;#00A60D",
-    "jobSlide_1": "#007FFF;#318CE7",
-    "jobSlide_2": "#00FF40;#03C03C",
-    "jobSlide_3": "#FF00BF;#FF00FF",
-    "jobSlide_4": "#FFC72C;#FFD700",
-    "jobSlide_5": "#fa8100;#ee6002",
-    "jobSlide_6": "#00ce77;#02eeab",
-    "jobSlide_7": "#fc3d09;#ff6337",
-    "jobSlide_8": "#740ee1;#b13ef2"
-}
-
 $(document).ready(function() {
+    const jsonList = {
+        "jobSlide_0": {
+            "jobName": "Job Slide 1",
+            "jobDescription": "This is the description of **Job Slide 1** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#30D252",
+                "up": "#00A60D"
+            }
+        },
+        "jobSlide_1": {
+            "jobName": "Job Slide 2",
+            "jobDescription": "This is the description of **Job Slide 2** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#007FFF",
+                "up": "#318CE7"
+            }
+        },
+        "jobSlide_2": {
+            "jobName": "Job Slide 3",
+            "jobDescription": "This is the description of **Job Slide 3** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#00FF40",
+                "up": "#03C03C"
+            }
+        },
+        "jobSlide_3": {
+            "jobName": "Job Slide 4",
+            "jobDescription": "This is the description of **Job Slide 4** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#FF00BF",
+                "up": "#FF00FF"
+            }
+        },
+        "jobSlide_4": {
+            "jobName": "Job Slide 5",
+            "jobDescription": "This is the description of **Job Slide 5** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#FFC72C",
+                "up": "#FFD700"
+            }
+        },
+        "jobSlide_5": {
+            "jobName": "Job Slide 6",
+            "jobDescription": "This is the description of **Job Slide 6** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#fa8100",
+                "up": "#ee6002"
+            }
+        },
+        "jobSlide_6": {
+            "jobName": "Job Slide 7",
+            "jobDescription": "This is the description of **Job Slide 7** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#00ce77",
+                "up": "#02eeab"
+            }
+        },
+        "jobSlide_7": {
+            "jobName": "Job Slide 8",
+            "jobDescription": "This is the description of **Job Slide 8** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#fc3d09",
+                "up": "#ff6337"
+            }
+        },
+        "jobSlide_8": {
+            "jobName": "Job Slide 9",
+            "jobDescription": "This is the description of **Job Slide 1** and it's *very* very **very** # COOL!",
+            "jobImagePreview": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+            "triangleColors": {
+                "down": "#740ee1",
+                "up": "#b13ef2"
+            }
+        },
+    }
+
+    const jsonListLenght = Object.keys(jsonList).length;
+
+    createSlidesContent();
+
     var jobSlides = document.querySelector('.jobsSlides');
     var allJobSlides = jobSlides.querySelectorAll('.jobSlide');
-    var jobSlidesCount = allJobSlides.length;
+    var jobSlidesCount = jsonListLenght;
     var selectedIndex = 0;
     var cellWidth = jobSlides.offsetWidth;
     var cellHeight = jobSlides.offsetHeight;
@@ -79,9 +155,47 @@ $(document).ready(function() {
     }
 
     function changeTriangleColors() {
-        var colors = jsonList["jobSlide_"+selectedIndex].split(";");
-        $(".triangle-down").css("border-top-color",colors[0])
-        $(".triangle-up").css("border-bottom-color",colors[1])
+        var colors = jsonList["jobSlide_"+selectedIndex]["triangleColors"];
+        $(".triangle-down").css("border-top-color",colors["down"])
+        $(".triangle-up").css("border-bottom-color",colors["up"])
+    }
+
+    function createSlidesContent() {
+        for (var i = 0; i < jsonListLenght; i++){
+            var jsonObject = jsonList["jobSlide_"+i]
+
+            var jobSlideContainer = document.createElement('div')
+            jobSlideContainer.id = "jobSlide_"+i
+            jobSlideContainer.className = "jobSlide"
+
+            var jobSlideName = document.createElement('div')
+            jobSlideName.id = "jobSlideName_"+i
+            jobSlideName.className = "jobSlideName"
+            jobSlideName.innerHTML = "<p>%jobName%</p>".replaceAll("%jobName%",marked.parse(jsonObject["jobName"]))
+            jobSlideContainer.appendChild(jobSlideName)
+
+            var jobImage = document.createElement('div')
+            jobImage.id = "jobPreviewImage_"+i
+            jobImage.className = "jobPreviewImage"
+            jobImage.style.backgroundImage = jsonObject["jobImagePreview"]
+            jobSlideContainer.appendChild(jobImage)
+
+            var jobDescription = document.createElement('div')
+            jobDescription.id = "jobDescription_"+i
+            jobDescription.className = "jobDescription"
+            jobDescription.innerHTML = marked.parse(jsonObject["jobDescription"])
+            jobSlideContainer.appendChild(jobDescription)
+
+            var jobJoinButton = document.createElement('button')
+            jobJoinButton.id = "joinButton_"+i
+            jobJoinButton.className = "joinButton"
+            jobJoinButton.setAttribute("role","button")
+            jobJoinButton.innerHTML = '<span>Join this job</span>'
+            jobJoinButton.style.backgroundImage = 'linear-gradient(147deg, '+jsonObject["triangleColors"]["down"]+', '+jsonObject["triangleColors"]["up"]+')'
+            jobSlideContainer.appendChild(jobJoinButton)
+
+            document.getElementById("jobSlides").appendChild(jobSlideContainer)
+        }
     }
 
 })

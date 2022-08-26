@@ -40,7 +40,7 @@ html {
     border-left: 28vw solid transparent;
     border-right: 28vw solid transparent;
     transition: all 1.0s;
-    border-bottom: 38vw solid #00A60D;
+    border-bottom: 38vw solid rgba(0, 166, 13, 1.0);
     filter: drop-shadow(0 0 3.8vw black);
 }
 
@@ -53,7 +53,7 @@ html {
     border-left: 30vw solid transparent;
     border-right: 30vw solid transparent;
     transition: all 1.0s;
-    border-top: 40vw solid #30D252;
+    border-top: 40vw solid rgba(48, 210, 82, 1.0);
     filter: drop-shadow(0 0 4vw black);
 }
 
@@ -143,11 +143,88 @@ html {
     left: 0.15vw;
     top: 0.30vw;
     border: 0.15vw solid black;
-    line-height: 12vw;
-    font-size: 3vw;
-    font-weight: bold;
     background-color: rgba(38, 38, 38, 0.80);
     color: white;
     text-align: center;
     transition: transform 1s, opacity 1s;
+}
+
+.jobPreviewImage {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.40);
+    background-image: url("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png");
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    top: 0.75vw;
+    right: 0.75vw;
+    width: 20vw;
+    height: 14.33vw;
+}
+
+.joinButton {
+  position: absolute;
+  top: 12vw;
+  left: 3.75vw;
+  align-items: center;
+  background-image: linear-gradient(147deg, #3f3f3f, #212121);
+  border: 0;
+  border-radius: 0.5vw;
+  box-shadow: rgba(65, 65, 65, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 1vw;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 10vw;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.joinButton:active,
+.joinButton:hover {
+  outline: 0;
+}
+
+.joinButton span {
+  background-color: rgb(22, 22, 22);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.joinButton:hover span {
+  background: none;
+}
+
+.jobSlideName {
+    position: absolute;
+    width: 14.25vw;
+    height: 11vw;
+    top: 0.75vw;
+    left: 0.375vw;
+}
+
+.jobSlideName p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.75vw;
+}
+
+.jobDescription {
+    position: absolute;
+    top: 15.5vw;
+    left: 0.75vw;
+    font-family: Phantomsans, sans-serif;
+    font-size: 0.85vw;
 }
