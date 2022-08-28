@@ -5,8 +5,8 @@ AddEventHandler('onResourceStart', function(resourceName)
     end
 end)
 
-AddEventHandler('esx:playerLoaded', function (xPlayer)
-    TriggerClientEvent('gs-jobcenter:config', xPlayer.source, Config)
+AddEventHandler('esx:playerLoaded', function (source)
+    TriggerClientEvent('gs-jobcenter:config', source, Config)
 end)
 
 RegisterNetEvent("gs-jobcenter:executeButtonFunction")
