@@ -10,7 +10,6 @@ lua54 'yes'
 
 shared_scripts {
     '@es_extended/imports.lua',
-    'config.lua'
 }
 
 client_scripts {
@@ -18,14 +17,17 @@ client_scripts {
 }
 
 server_scripts {
-    'server.lua'
+    'server.lua',
+    'config.lua'
 }
 
 files {
     'html/main.html',
     'html/js/*.js',
     'html/css/*.css',
-    'html/css/*.ttf'
+    'html/css/fonts/*.woff',
+    'html/css/assets/*.png'
+
 }
 
 escrow_ignore {

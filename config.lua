@@ -1,5 +1,7 @@
 Config = {}
 
+Config.isHorizontal = true
+
 Config.jobs = {
     jobSlide_0 = {
         jobName = "Job Slide 1",
@@ -9,8 +11,10 @@ Config.jobs = {
             down = "#30D252",
             up = "#00A60D"
         },
-        buttonClick = function ()
-            
+        buttonClick = function (source)
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 1!", 5000, "info")
         end
     },
     jobSlide_1 = {
@@ -21,8 +25,10 @@ Config.jobs = {
             down = "#007FFF",
             up = "#318CE7"
         },
-        buttonClick = function ()
-            
+        buttonClick = function (source)
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("ems",2)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 2!", 5000, "info")
         end
     },
     jobSlide_2 = {
@@ -34,7 +40,9 @@ Config.jobs = {
             up = "#03C03C"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("mechanic",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 3!", 5000, "info")
         end
     },
     jobSlide_3 = {
@@ -46,7 +54,9 @@ Config.jobs = {
             up = "#FF00FF"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 4!", 5000, "info")
         end
     },
     jobSlide_4 = {
@@ -58,7 +68,9 @@ Config.jobs = {
             up = "#FFD700"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 5!", 5000, "info")
         end
     },
     jobSlide_5 = {
@@ -70,7 +82,9 @@ Config.jobs = {
             up = "#ee6002"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 6!", 5000, "info")
         end
     },
     jobSlide_6 = {
@@ -82,7 +96,9 @@ Config.jobs = {
             up = "#02eeab"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 7!", 5000, "info")
         end
     },
     jobSlide_7 = {
@@ -94,7 +110,9 @@ Config.jobs = {
             up = "#ff6337"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 8!", 5000, "info")
         end
     },
     jobSlide_8 = {
@@ -106,7 +124,9 @@ Config.jobs = {
             up = "#b13ef2"
         },
         buttonClick = function ()
-            
+            local xPlayer = ESX.GetPlayerFromId(source)
+            xPlayer.setJob("police",1)
+            TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 9!", 5000, "info")
         end
     }
 }

@@ -12,26 +12,49 @@ $(document).ready(function() {
     var selectedIndex = 0
     var cellWidth
     var cellHeight
-    var isHorizontal = true;
-    var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
+    var isHorizontal
+    var rotateFn
     var radius, theta;
+    var initiated = false
+
+    function display(bool) {
+        if (bool) {
+            $("#main").fadeIn(750);
+            initiate();
+        } else {
+            $("#main").fadeOut(750);
+        }
+    }
+
+    display(false)
 
     window.addEventListener('message', (event) => {
         let data = event.data
-        if(data.action == 'sendConfig') {
-            jsonList = data.config
+        if (data.action === 'sendConfig') {
+            jsonList = JSON.parse(data.config)
+            isHorizontal = data.isHorizontal
             jsonListLenght = Object.keys(jsonList).length;
-            initiate();
+        }
+        if (data.action == "ui") {
+            if (data.status == true) {
+                display(true)
+            } else {
+                display(false)
+            }
         }
     })
 
     function initiate(){
-        createSlidesContent();
+        if (!initiated) {
+            createSlidesContent();
+            initiated = true
+        }
         jobSlides = document.querySelector('.jobsSlides');
         allJobSlides = jobSlides.querySelectorAll('.jobSlide');
         jobSlidesCount = jsonListLenght;
         cellWidth = jobSlides.offsetWidth;
         cellHeight = jobSlides.offsetHeight;
+        rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
         setVisibility();
         changeCarousel();
     }
@@ -43,8 +66,12 @@ $(document).ready(function() {
     }
 
     document.onkeyup = function(data) {
-        const nextKey = isHorizontal ? "ArrowRight" : "ArrowUp"
-        const prevKey = isHorizontal ? "ArrowLeft" : "ArrowDown"
+        var nextKey = "ArrowRight"
+        var prevKey = "ArrowLeft"
+        if (!isHorizontal){
+            nextKey = "ArrowUp"
+            prevKey = "ArrowDown"
+        }
         if (data.key == nextKey){
             if (selectedIndex+1 == jobSlidesCount) return;
             selectedIndex++;
@@ -58,6 +85,9 @@ $(document).ready(function() {
             rotateCarousel();
             setVisibility();
             changeTriangleColors();
+        }
+        if (data.code == "Escape") {
+            $.post('http://gs-jobcenter/exit', JSON.stringify({}));
         }
     };
 
@@ -80,6 +110,12 @@ $(document).ready(function() {
         rotateCarousel();
     }
 
+    function clickedButton(){
+        $.post('http://gs-jobcenter/clickedButton', JSON.stringify({
+            slideName: "jobSlide_"+selectedIndex,
+        }));
+    }
+
     function setVisibility(){
         $("#jobSlide_"+parseInt(jobSlidesCount-1)).fadeOut(200)
         for (var i = 0; i < jobSlidesCount-1; i++){
@@ -100,7 +136,7 @@ $(document).ready(function() {
 
     function createSlidesContent() {
         for (var i = 0; i < jsonListLenght; i++){
-            var jsonObject = jsonList["jobSlide_"+i]
+            var jsonObject = jsonList["jobSlide_"+i.toString()]
 
             var jobSlideContainer = document.createElement('div')
             jobSlideContainer.id = "jobSlide_"+i
@@ -130,6 +166,7 @@ $(document).ready(function() {
             jobJoinButton.setAttribute("role","button")
             jobJoinButton.innerHTML = '<span>Join this job</span>'
             jobJoinButton.style.backgroundImage = 'linear-gradient(147deg, '+jsonObject["triangleColors"]["down"]+', '+jsonObject["triangleColors"]["up"]+')'
+            jobJoinButton.onclick = function(){clickedButton()}
             jobSlideContainer.appendChild(jobJoinButton)
 
             document.getElementById("jobSlides").appendChild(jobSlideContainer)
