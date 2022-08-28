@@ -11,7 +11,6 @@ end)
 
 AddEventHandler("vRP:playerSpawn", function (user_id, source)
     Wait(1000)
-    print(user_id,source)
     TriggerClientEvent('gs-jobcenter:config', source, Config)
 end)
 
