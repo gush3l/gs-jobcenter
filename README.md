@@ -10,6 +10,8 @@ Make **pull-requests** if you want improve this script!
 **My Discord Server:** https://discord.gg/XTpGvYeNxg
 *I suggest joining as I am going to announce there any other new scripts that I am working on!*
 
+**Credits to this CodePen for the div carousel:** https://codepen.io/desandro/pen/wjeBpp
+
 #
 
 **Change Logs:**
