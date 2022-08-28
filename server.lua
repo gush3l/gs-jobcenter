@@ -1,3 +1,7 @@
+local Tunnel = module("vrp", "lib/Tunnel")
+local Proxy = module("vrp", "lib/Proxy")
+vRP = Proxy.getInterface("vRP")
+
 AddEventHandler('onResourceStart', function(resourceName)
     if (GetCurrentResourceName() == resourceName) then
         Wait(1000)
@@ -5,7 +9,9 @@ AddEventHandler('onResourceStart', function(resourceName)
     end
 end)
 
-AddEventHandler("playerJoining", function (source)
+AddEventHandler("vRP:playerSpawn", function (user_id, source)
+    Wait(1000)
+    print(user_id,source)
     TriggerClientEvent('gs-jobcenter:config', source, Config)
 end)
 

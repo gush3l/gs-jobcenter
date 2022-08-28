@@ -12,8 +12,8 @@ Config.jobs = {
             up = "#00A60D"
         },
         buttonClick = function (source)
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Miner"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 1!", 5000, "info")
         end
     },
@@ -26,8 +26,8 @@ Config.jobs = {
             up = "#318CE7"
         },
         buttonClick = function (source)
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("ems",2)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"smurd"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 2!", 5000, "info")
         end
     },
@@ -40,8 +40,8 @@ Config.jobs = {
             up = "#03C03C"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("mechanic",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Curva"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 3!", 5000, "info")
         end
     },
@@ -54,8 +54,8 @@ Config.jobs = {
             up = "#FF00FF"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"McDonald"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 4!", 5000, "info")
         end
     },
@@ -68,8 +68,8 @@ Config.jobs = {
             up = "#FFD700"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Electrician"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 5!", 5000, "info")
         end
     },
@@ -82,8 +82,8 @@ Config.jobs = {
             up = "#ee6002"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Taxi"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 6!", 5000, "info")
         end
     },
@@ -96,8 +96,8 @@ Config.jobs = {
             up = "#02eeab"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Avocat"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 7!", 5000, "info")
         end
     },
@@ -110,8 +110,8 @@ Config.jobs = {
             up = "#ff6337"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"UPS"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 8!", 5000, "info")
         end
     },
@@ -124,8 +124,8 @@ Config.jobs = {
             up = "#b13ef2"
         },
         buttonClick = function ()
-            local xPlayer = ESX.GetPlayerFromId(source)
-            xPlayer.setJob("police",1)
+            local user_id = vRP.getUserId({source})
+            vRP.addUserGroup({user_id,"Somer"})
             TriggerClientEvent("gs-notify:SendNotification",tostring(source), "Info Notification", "You joined the job associated with the job slide 9!", 5000, "info")
         end
     }
