@@ -3,7 +3,7 @@ game 'gta5'
 
 author "gush3l"
 description "Beautiful modern UI job center!"
-version '1.0.0'
+version '1.1.0'
 ui_page "html/main.html"
 
 lua54 'yes'
