@@ -1,5 +1,5 @@
 # GS Jobcenter
-Beautiful modern UI job center for servers!
+Beautiful modern UI job center for ESX servers!
 
 You can configurate everything and also you can use Markdown for job descriptions!
 
