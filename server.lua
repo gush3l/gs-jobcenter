@@ -6,7 +6,7 @@ AddEventHandler('onResourceStart', function(resourceName)
 end)
 
 AddEventHandler("playerJoining", function (source)
-    TriggerClientEvent('gs-jobcenter:config', source, Config.jobs)
+    TriggerClientEvent('gs-jobcenter:config', source, Config)
 end)
 
 RegisterNetEvent("gs-jobcenter:executeButtonFunction")

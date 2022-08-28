@@ -152,7 +152,6 @@ $(document).ready(function() {
             jobImage.id = "jobPreviewImage_"+i
             jobImage.className = "jobPreviewImage"
             jobImage.style.backgroundImage = "url("+jsonObject["jobImagePreview"]+")"
-            console.log(jsonObject["jobImagePreview"])
             jobSlideContainer.appendChild(jobImage)
 
             var jobDescription = document.createElement('div')
