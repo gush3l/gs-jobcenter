@@ -5,7 +5,7 @@ You can configurate everything and also you can use Markdown for job description
 
 Make **pull-requests** if you want improve this script!
 
-**Preview:** https://streamable.com/o4w1ph
+**Preview:** https://streamable.com/u2lq00
 
 **My Discord Server:** https://discord.gg/XTpGvYeNxg
 *I suggest joining as I am going to announce there any other new scripts that I am working on!*
