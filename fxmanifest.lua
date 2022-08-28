@@ -8,15 +8,12 @@ ui_page "html/main.html"
 
 lua54 'yes'
 
-shared_scripts {
-    '@es_extended/imports.lua',
-}
-
 client_scripts {
     'client.lua'
 }
 
 server_scripts {
+    "@vrp/lib/utils.lua",
     'server.lua',
     'config.lua'
 }
