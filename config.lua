@@ -8,7 +8,10 @@ Config.jobs = {
         triangleColors = {
             down = "#30D252",
             up = "#00A60D"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_1 = {
         jobName = "Job Slide 2",
@@ -17,16 +20,22 @@ Config.jobs = {
         triangleColors = {
             down = "#007FFF",
             up = "#318CE7"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_2 = {
         jobName = "Job Slide 3",
         jobDescription = "This is the description of **Job Slide 3** and it's *very* very **very** # COOL!",
-        jobImagePreview = "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png",
+        jobImagePreview = "https://i.ytimg.com/vi/WsYH-8EJ2Oc/maxresdefault.jpg",
         triangleColors = {
             down = "#00FF40",
             up = "#03C03C"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_3 = {
         jobName = "Job Slide 4",
@@ -35,7 +44,10 @@ Config.jobs = {
         triangleColors = {
             down = "#FF00BF",
             up = "#FF00FF"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_4 = {
         jobName = "Job Slide 5",
@@ -44,7 +56,10 @@ Config.jobs = {
         triangleColors = {
             down = "#FFC72C",
             up = "#FFD700"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_5 = {
         jobName = "Job Slide 6",
@@ -53,7 +68,10 @@ Config.jobs = {
         triangleColors = {
             down = "#fa8100",
             up = "#ee6002"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_6 = {
         jobName = "Job Slide 7",
@@ -62,7 +80,10 @@ Config.jobs = {
         triangleColors = {
             down = "#00ce77",
             up = "#02eeab"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_7 = {
         jobName = "Job Slide 8",
@@ -71,7 +92,10 @@ Config.jobs = {
         triangleColors = {
             down = "#fc3d09",
             up = "#ff6337"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     },
     jobSlide_8 = {
         jobName = "Job Slide 9",
@@ -80,6 +104,9 @@ Config.jobs = {
         triangleColors = {
             down = "#740ee1",
             up = "#b13ef2"
-        }
+        },
+        buttonClick = function ()
+            
+        end
     }
 }
