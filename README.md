@@ -1,5 +1,5 @@
 # GS Jobcenter
-Beautiful modern UI job center for vRP servers!
+Beautiful modern UI job center for servers!
 
 You can configurate everything and also you can use Markdown for job descriptions!
 
